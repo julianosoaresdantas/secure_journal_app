@@ -1,0 +1,8 @@
+# config/routes.rb
+Rails.application.routes.draw do
+  # ... other routes ...
+
+  get "about", to: "home#about" # Add or correct this line for your About page
+
+  # ... rest of your routes ...
+end

@@ -1,0 +1,25 @@
+# config/database.yml
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: secure_journal_app_development
+
+test:
+  <<: *default
+  database: secure_journal_app_production # Make sure this is '_test' if you have a separate test DB
+
+production:
+  <<: *default
+  database: secure_journal_app_production
+  # url: <%= ENV['DATABASE_URL'] %> # <-- REMOVE OR COMMENT OUT THIS LINE!
+  cache:
+    <<: *default
+    database: secure_journal_app_production

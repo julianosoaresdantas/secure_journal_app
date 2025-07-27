@@ -1,0 +1,23 @@
+<%# app/views/journal_entries/index.html.erb %>
+<h1>My Journal Entries</h1>
+
+<div id="journal_entries">
+  <% if @journal_entries.empty? %>
+    <p>You don't have any journal entries yet. Why not create one?</p>
+  <% else %>
+    <% @journal_entries.each do |journal_entry| %>
+      <div>
+        <h2><%= link_to journal_entry.title, journal_entry %></h2>
+        <p><%= truncate(journal_entry.content, length: 150) %></p>
+        <p>
+          <%= link_to "Show this entry", journal_entry %> |
+          <%= link_to "Edit this entry", edit_journal_entry_path(journal_entry) %> |
+          <%= button_to "Delete this entry", journal_entry, method: :delete, data: { confirm: "Are you sure?" } %>
+        </p>
+      </div>
+      <hr>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New journal entry", new_journal_entry_path %>

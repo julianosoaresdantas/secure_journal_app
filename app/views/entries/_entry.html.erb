@@ -1,0 +1,27 @@
+<div id="<%= dom_id entry %>">
+  <p>
+    <strong>Title:</strong>
+    <%= entry.title %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= entry.content %>
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    <%= entry.created_at.to_formatted_s(:long) %>
+  </p>
+
+  <p>
+    <strong>Last updated:</strong>
+    <%= entry.updated_at.to_formatted_s(:long) %>
+  </p>
+
+  <div>
+    <%= link_to "Show this entry", entry %> |
+    <%= link_to "Edit this entry", edit_entry_path(entry) %> |
+    <%= link_to "Destroy this entry", entry, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </div>
+</div>

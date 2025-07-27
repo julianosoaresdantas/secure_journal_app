@@ -1,0 +1,39 @@
+# Ignore all log files and temp files
+/log/*
+/tmp/*
+/vendor/bundle/
+/vendor/cache/
+/vendor/assets/
+/public/assets
+/public/packs
+/public/builds
+/storage/*
+/node_modules/
+.byebug_history
+.DS_Store
+.env
+.idea
+.rspec
+.sass-cache
+.spring
+.zeus.sock
+config/database.yml
+config/master.key
+db/*.sqlite3
+/coverage
+/spec/examples.txt
+/bin/*
+!/bin/setup
+!/bin/rails
+!/bin/rake
+!/bin/yarn
+!/bin/bundle
+!/bin/web
+!/bin/docker-compose
+# Docker
+.dockerignore
+.docker/
+tmp/
+# VS Code
+.vscode/
+# Add any specific generated files from your project if needed

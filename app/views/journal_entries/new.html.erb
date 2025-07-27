@@ -1,0 +1,10 @@
+<%# app/views/journal_entries/new.html.erb %>
+<h1>New journal entry</h1>
+
+<%= render "form", journal_entry: @journal_entry %>
+
+<br>
+
+<div>
+  <%= link_to "Back to journal entries", journal_entries_path %>
+</div>
