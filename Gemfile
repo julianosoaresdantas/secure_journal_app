@@ -7,7 +7,7 @@ gem "propshaft"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 6.0"# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "puma", "~> 6.6"# Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem "tailwindcss-rails", "~> 3.3.1" # Pin to version 3.3.1
 gem "foreman"
