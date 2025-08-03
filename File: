@@ -1,0 +1,14 @@
+<nav class="main-nav"> <%# Class added, inline style removed %>
+  <div>
+    <%= link_to "My Journal", entries_path %>
+  </div>
+  <div>
+    <% if user_signed_in? %>
+      <%= link_to "My Profile", users_index_path %>
+      <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
+  </div>
+</nav>

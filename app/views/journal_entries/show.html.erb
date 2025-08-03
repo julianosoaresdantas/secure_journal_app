@@ -1,0 +1,17 @@
+<%# app/views/journal_entries/show.html.erb %>
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @journal_entry.title %></h1>
+
+<div>
+  <%= simple_format(@journal_entry.content) %>
+</div>
+
+<div>
+  <%= link_to "Edit this journal entry", edit_journal_entry_path(@journal_entry) %> |
+  <%= button_to "Delete this journal entry", @journal_entry, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+
+<div>
+  <%= link_to "Back to journal entries", journal_entries_path %>
+</div>

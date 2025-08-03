@@ -1,0 +1,40 @@
+<h1>Entries</h1>
+
+<%# Search Form %>
+<div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+  <%= form_with url: entries_path, method: :get, local: true, class: "search-form" do |form| %>
+    <%= form.text_field :query, value: params[:query], placeholder: "Search entries by title or content...", style: "width: 70%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px;" %>
+    <%= form.submit "Search", class: "button" %>
+    <% if params[:query].present? %>
+      <%= link_to "Clear Search", entries_path, class: "button secondary", style: "margin-left: 10px;" %>
+    <% end %>
+  <% end %>
+</div>
+
+<%# Check if there are entries to display %>
+<% if @entries.empty? %>
+  <p style="text-align: center; margin-top: 30px; font-style: italic;">
+    No entries found.
+    <% if params[:query].present? %>
+      Try a different search, or <%= link_to "clear your search", entries_path %>.
+    <% else %>
+      <%= link_to "Create your first entry now!", new_entry_path %>.
+    <% end %>
+  </p>
+<% else %>
+  <%# Entries List %>
+  <div id="entries">
+    <% @entries.each do |entry| %>
+      <%= render entry %>
+      <p class="entry-actions">
+        <%= link_to "Show this entry", entry %> |
+        <%= link_to "Edit this entry", edit_entry_path(entry) %> |
+        <%= link_to "Destroy this entry", entry, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+<hr>
+
+<%= link_to "New entry", new_entry_path, class: "button" %>

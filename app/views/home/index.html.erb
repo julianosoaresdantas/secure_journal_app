@@ -1,0 +1,37 @@
+<%# app/views/home/index.html.erb %>
+<h1 data-controller="hello"><span class="text-blue-600 font-bold">Welcome!</span></h1>
+<p>You have signed up successfully.</p>
+
+<% if user_signed_in? %>
+  <%= link_to "View My Journal Entries", journal_entries_path %>
+<% end %>
+
+<h1 style="text-align: center; color: #28a745;">Welcome to Your Secure Personal Journal!</h1>
+
+<p style="text-align: center; margin-top: 20px; font-size: 1.1em;">
+  This is your private space to record your thoughts, ideas, and daily reflections.
+  Your entries are securely stored and accessible only by you.
+</p>
+
+<div style="text-align: center; margin-top: 30px;">
+  <%= link_to "View My Journal Entries", journal_entries_path %>
+</div>
+
+<style>
+  /* Basic button styling (can be moved to application.css later) */
+  .button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white !important; /* Use !important to override default link color */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+    text-decoration: none; /* Keep underline off on hover for button */
+  }
+</style>

@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
+
+  web:
+    build: .
+    command: sh -c "rm -f tmp/pids/server.pid && bundle exec rails server -b 0.0.0.0 -p 3000"
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:password@db:5432/secure_journal_app_development
+
+  css:
+    build: .
+    command: sh -c "bundle exec tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --watch"
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+    depends_on:
+      - web
+    stdin_open: true # <--- ADD THIS LINE
+    tty: true        # <--- ADD THIS LINE
+
+volumes:
+  db_data:
+  bundle_cache:

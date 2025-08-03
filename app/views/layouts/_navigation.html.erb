@@ -1,0 +1,9 @@
+<%# app/views/layouts/_navigation.html.erb %>
+<div>
+  <% if user_signed_in? %>
+    <%= link_to "My Journal", authenticated_root_path %> <%# Use authenticated_root_path %>
+  <% else %>
+    <%= link_to "My Journal", root_path %> <%# Use root_path for the unauthenticated root %>
+  <% end %>
+  <%= link_to "About", about_path %> <%# Assuming you have an about_path defined or will define one %>
+</div>

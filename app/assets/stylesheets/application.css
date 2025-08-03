@@ -1,0 +1,200 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the CSS
+ * files listed below.
+ *
+ * Any CSS (and SCSS, ES6, etc.) file within this directory, lib/assets/stylesheets, or
+ * vendor/assets/stylesheets, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll automatically
+ * be included in the compiled file so long as this reference (and any previous ones)
+ * are not removed.
+ *
+ * If you're using Sass (SCSS) you can use Sass imports of other assets.
+ *
+ * For details, see https://guides.rubyonrails.org/asset_pipeline.html
+ */
+
+/* Add your new custom styles below this line */
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  background-color: #e9ecef; /* A light background color for the whole page */
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for the content container */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Softer shadow */
+}
+
+/* Page Titles and Headings */
+.page-title {
+  font-size: 3em; /* Make it significantly larger */
+  color: #2c3e50; /* A dark blue-gray */
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+h1, h2, h3 {
+  color: #0056b3; /* A shade of blue for general headings */
+  font-weight: bold;
+}
+
+/* Styles for the "no entries" message */
+.empty-state-message {
+  text-align: center;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #f0f4f7; /* Light background */
+  border: 1px dashed #a7b7c7; /* Dashed border */
+  border-radius: 10px;
+  max-width: 600px; /* Limit width */
+  margin-left: auto;
+  margin-right: auto; /* Center the block */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Inner shadow for depth */
+}
+
+.empty-state-message p {
+  font-size: 1.2em; /* Larger text for the message */
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Universal button/link styling */
+.primary-button {
+  display: inline-block; /* Makes it behave like a block but sit on a line */
+  padding: 12px 25px;
+  background-color: #3498db; /* A nice blue */
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effect */
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.primary-button:active {
+  background-color: #236fa1;
+  transform: translateY(0);
+}
+
+/* Styles for individual journal entry items */
+.journal-entry-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.journal-entry-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.journal-entry-item h2 {
+  font-size: 1.8em; /* Size for entry titles */
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.journal-entry-item p {
+  font-size: 1.05em; /* Size for entry content */
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Styles for action links within entries (Edit, Show, Destroy) */
+.journal-entry-item a,
+.journal-entry-item form input[type="submit"] {
+  color: #3498db;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 0.95em;
+  transition: color 0.2s ease;
+}
+
+.journal-entry-item a:hover,
+.journal-entry-item form input[type="submit"]:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Adjust destroy button to look like a link */
+.journal-entry-item form {
+  display: inline; /* Keep button on the same line as links */
+}
+
+.journal-entry-item form input[type="submit"] {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: #e74c3c; /* Red color for destroy */
+  font-weight: normal;
+}
+
+.journal-entry-item form input[type="submit"]:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/* Styles for flash messages (like "Journal entry was successfully created.") */
+.notice {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+/* General Layout helpers */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.action-buttons {
+  text-align: center;
+  margin-top: 30px;
+}

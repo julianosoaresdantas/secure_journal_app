@@ -1,0 +1,26 @@
+<h1 class="page-title">My Journal Entries</h1>
+
+<% if @journal_entries.empty? %>
+  <div class="empty-state-message">
+    <p>You don't have any journal entries yet. Why not create one?</p>
+    <%= link_to "New journal entry", new_journal_entry_path, class: "primary-button" %>
+  </div>
+<% else %>
+  <% @journal_entries.each do |entry| %>
+    <div class="journal-entry-item">
+      <h2><%= entry.title %></h2>
+      <p><%= entry.content %></p>
+      <%= link_to "Show this journal entry", entry %> |
+      <%= link_to "Edit this journal entry", edit_journal_entry_path(entry) %> |
+      <%= button_to "Destroy this journal entry", entry, method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
+<% end %>
+
+<% unless @journal_entries.empty? %>
+  <div class="action-buttons">
+    <%= link_to "New journal entry", new_journal_entry_path, class: "primary-button" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to home", root_path %>

@@ -1,0 +1,14 @@
+<h1>Your Profile</h1>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<div>
+  <%= link_to "Edit Profile (Email/Password)", edit_user_registration_path %>
+</div>
+<br>
+<div>
+  <%= link_to "Back to Journal Entries", entries_path %>
+</div>

@@ -1,0 +1,16 @@
+# config/storage.yml
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %> # This is where files will be stored in development
+
+# You can add other services for production here, e.g., Amazon S3
+# amazon:
+#   service: S3
+#   access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
+#   secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
+#   bucket: your-production-bucket
+#   region: us-east-1

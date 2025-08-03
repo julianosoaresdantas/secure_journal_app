@@ -1,0 +1,70 @@
+<%# app/views/entries/show.html.erb %>
+
+<h1>Entry Details</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= markdown(@entry.content) %> <%# <--- CHANGED THIS LINE %>
+</p>
+<h1>Entry Details</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= markdown(@entry.content) %>
+</p>
+
+<%# <--- NEW CODE FOR IMAGE DISPLAY --> %>
+<% if @entry.image.attached? %>
+  <div style="margin-top: 20px; text-align: center;">
+    <h3>Attached Image:</h3>
+    <%= image_tag @entry.image, style: "max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" %>
+  </div>
+<% end %>
+<%# <--- END NEW CODE --> %>
+
+<p style="margin-top: 20px;">
+  <strong>Created at:</strong>
+  <%= @entry.created_at.strftime("%B %d, %Y %H:%M") %>
+</p>
+
+<p>
+  <strong>Last updated:</strong>
+  <%= @entry.updated_at.strftime("%B %d, %Y %H:%M") %>
+</p>
+
+<div class="entry-actions">
+  <%= link_to "Show this entry", @entry, class: "button" %> |
+  <%= link_to "Edit this entry", edit_entry_path(@entry), class: "button secondary" %> |
+  <%= link_to "Destroy this entry", @entry, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "button alert" %>
+</div>
+<br>
+<div>
+  <%= link_to "Back to entries", entries_path, class: "button secondary" %>
+</div>
+<p>
+  <strong>Created at:</strong>
+  <%= @entry.created_at.strftime("%B %d, %Y %H:%M") %>
+</p>
+
+<p>
+  <strong>Last updated:</strong>
+  <%= @entry.updated_at.strftime("%B %d, %Y %H:%M") %>
+<div class="entry-actions"> <%# <--- ADDED CLASS HERE %>
+  <%= link_to "Show this entry", @entry, class: "button" %> | <%# Added class for consistency %>
+  <%= link_to "Edit this entry", edit_entry_path(@entry), class: "button secondary" %> | <%# Added class for consistency %>
+  <%= link_to "Destroy this entry", @entry, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "button alert" %> <%# Added class for consistency %>
+</div>
+<br>
+<div>
+  <%= link_to "Back to entries", entries_path, class: "button secondary" %> <%# Added class for consistency %>
+</div></p>

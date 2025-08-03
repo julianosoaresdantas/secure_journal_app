@@ -1,0 +1,4 @@
+# ... other instructions
+ENV HTTP_PROXY="http://your.proxy.server:port"
+ENV HTTPS_PROXY="http://your.proxy.server:port"
+# ... rest of your Dockerfile
