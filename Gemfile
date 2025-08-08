@@ -5,7 +5,7 @@ ruby "3.3.0"
 
 gem "rails", "~> 8.0"
 gem "sqlite3", "~> 2.1"
-gem "puma", "~> 6.0"
+gem "puma", "~> 6.6"
 gem "jbuilder"
 #gem "tailwindcss-rails", "~> 3.3.1"
 gem "turbo-rails"
