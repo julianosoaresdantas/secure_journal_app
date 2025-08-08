@@ -1,7 +1,11 @@
 <%# app/views/journal_entries/show.html.erb %>
-<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <h1><%= @journal_entry.title %></h1>
+
+<p>
+  <%= @journal_entry.body %>
+</p>
 
 <div>
   <%= simple_format(@journal_entry.content) %>

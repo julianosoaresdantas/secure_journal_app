@@ -37,3 +37,5 @@ tmp/
 # VS Code
 .vscode/
 # Add any specific generated files from your project if needed
+
+/config/master.key

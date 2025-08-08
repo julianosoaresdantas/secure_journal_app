@@ -1,26 +1,29 @@
-<h1 class="page-title">My Journal Entries</h1>
+<p id="notice"><%= notice %></p>
 
-<% if @journal_entries.empty? %>
-  <div class="empty-state-message">
-    <p>You don't have any journal entries yet. Why not create one?</p>
-    <%= link_to "New journal entry", new_journal_entry_path, class: "primary-button" %>
-  </div>
-<% else %>
-  <% @journal_entries.each do |entry| %>
-    <div class="journal-entry-item">
-      <h2><%= entry.title %></h2>
-      <p><%= entry.content %></p>
-      <%= link_to "Show this journal entry", entry %> |
-      <%= link_to "Edit this journal entry", edit_journal_entry_path(entry) %> |
-      <%= button_to "Destroy this journal entry", entry, method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
-  <% end %>
-<% end %>
+<h1>Journal Entries</h1>
 
-<% unless @journal_entries.empty? %>
-  <div class="action-buttons">
-    <%= link_to "New journal entry", new_journal_entry_path, class: "primary-button" %>
-  </div>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to "Back to home", root_path %>
+  <tbody>
+    <% @journal_entries.each do |journal_entry| %>
+      <tr>
+        <td><%= journal_entry.title %></td>
+        <td><%= journal_entry.body %></td>
+        <td><%= link_to 'Show', journal_entry %></td>
+        <td><%= link_to 'Edit', edit_journal_entry_path(journal_entry) %></td>
+        <td><%= link_to 'Destroy', journal_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Journal Entry', new_journal_entry_path %>

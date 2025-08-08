@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
-
+  config.force_ssl = true
   # The `Content-Disposition` header is set to `inline` by default.
   # This is a security risk. Please check your applications file-serving
   # mechanisms for a fix.

@@ -1,9 +1,11 @@
-<%# app/views/layouts/_navigation.html.erb %>
-<div>
+<nav>
+  <%= link_to "Home", root_path %>
+  <%= link_to "About", about_path %>
+
   <% if user_signed_in? %>
-    <%= link_to "My Journal", authenticated_root_path %> <%# Use authenticated_root_path %>
+    <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete } %>
   <% else %>
-    <%= link_to "My Journal", root_path %> <%# Use root_path for the unauthenticated root %>
+    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Log in", new_user_session_path %>
   <% end %>
-  <%= link_to "About", about_path %> <%# Assuming you have an about_path defined or will define one %>
-</div>
+</nav>
