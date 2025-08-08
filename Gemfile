@@ -13,6 +13,7 @@ gem "importmap-rails"
 gem 'devise', '~> 4.9'
 gem "bcrypt", "~> 3.1.7"
 gem 'pundit'
+gem 'devise-two-factor'
 group :development do
   gem "debug"
   gem "web-console"

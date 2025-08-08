@@ -93,6 +93,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-two-factor (6.1.0)
+      activesupport (>= 7.0, < 8.1)
+      devise (~> 4.0)
+      railties (>= 7.0, < 8.1)
+      rotp (~> 6.0)
     drb (2.2.3)
     erb (5.0.2)
     erubi (1.13.1)
@@ -209,6 +214,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    rotp (6.3.0)
     securerandom (0.4.1)
     sqlite3 (2.7.3-aarch64-linux-gnu)
     sqlite3 (2.7.3-aarch64-linux-musl)
@@ -257,6 +263,7 @@ DEPENDENCIES
   bootsnap
   debug
   devise (~> 4.9)
+  devise-two-factor
   importmap-rails
   jbuilder
   puma (~> 6.0)
