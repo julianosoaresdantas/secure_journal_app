@@ -14,6 +14,7 @@ gem 'devise', '~> 4.9'
 gem "bcrypt", "~> 3.1.7"
 gem 'pundit'
 gem 'devise-two-factor'
+gem 'rqrcode'
 group :development do
   gem "debug"
   gem "web-console"

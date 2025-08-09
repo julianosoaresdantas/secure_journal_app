@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_08_174618) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_09_211130) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -70,6 +70,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_08_174618) do
     t.string "otp_secret"
     t.integer "consumed_timestep"
     t.boolean "otp_required_for_login"
+    t.string "two_factor_secret_key"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

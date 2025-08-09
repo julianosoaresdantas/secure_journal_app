@@ -1,0 +1,25 @@
+<h2>Set up Two-Factor Authentication</h2>
+
+<p>
+  Scan the QR code below with an authenticator app (e.g., Google Authenticator, Authy).
+  <br>
+  Then, enter the code from the app to verify.
+</p>
+
+<%= raw @qr_code.as_svg(
+  offset: 0,
+  color: '000',
+  shape_rendering: 'crispEdges',
+  module_size: 4
+) %>
+
+<%= form_with url: two_factor_authentication_path, local: true, method: :post do |form| %>
+  <div>
+    <%= form.label :otp_attempt, "Verification Code" %>
+    <%= form.text_field :otp_attempt %>
+  </div>
+
+  <div>
+    <%= form.submit "Enable 2FA" %>
+  </div>
+<% end %>
