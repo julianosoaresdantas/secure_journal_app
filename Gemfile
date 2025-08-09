@@ -19,4 +19,5 @@ group :development do
   gem "debug"
   gem "web-console"
   gem "bootsnap", require: false
+  gem 'rubocop', require: false
 end
