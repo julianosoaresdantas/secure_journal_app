@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.3.0"
 
 gem "rails", "~> 8.0"
-gem "sqlite3", "~> 2.1"
+gem "sqlite3", "~> 2.8"
 gem "puma", "~> 6.0"
 gem "jbuilder"
 #gem "tailwindcss-rails", "~> 3.3.1"
